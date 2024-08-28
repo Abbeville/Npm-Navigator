@@ -14,12 +14,12 @@
   "contributes": {
     "commands": [
       {
-        "command": "npm-navigator.helloWorld",
-        "title": "Hello World"
-      },
-      {
         "command": "extension.listDependencies",
         "title": "List Dependencies"
+      },
+      {
+        "command": "extension.listDevDependencies",
+        "title": "List DevDependencies"
       }
     ]
   },
