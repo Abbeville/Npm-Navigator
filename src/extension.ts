@@ -22,7 +22,8 @@ export function activate(context: vscode.ExtensionContext) {
 				if (!dependencies) {
 					vscode.window.showErrorMessage("Could not find dependencies in the package.json");
 				}
-				vscode.window.showInformationMessage(`${Object.keys(dependencies).join('\n')}`);
+				const dependenciesListWithVersion = Object.entries(dependencies).map(([dep, version]) => `${dep} : ${version}`).join(`\n`);
+				vscode.window.showInformationMessage(dependenciesListWithVersion);
 			});
 		}
 	));
@@ -46,7 +47,8 @@ export function activate(context: vscode.ExtensionContext) {
 				if (!devDependencies) {
 					vscode.window.showErrorMessage("Could not find devDependencies in the package.json");
 				}
-				vscode.window.showInformationMessage(`${Object.keys(devDependencies).join('\n')}`);
+				const devDependenciesListWithVersion = Object.entries(devDependencies).map(([dep, version]) => `${dep} : ${version}`).join(`\n`);
+				vscode.window.showInformationMessage(devDependenciesListWithVersion);
 			});
 		}
 	));
